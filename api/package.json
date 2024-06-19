@@ -1,0 +1,23 @@
+{
+  "name": "server-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\"",
+    "start-dev": "ts-node-dev --respawn ./src/server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "log4js": "^6.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/log4js": "^2.3.5",
+    "prettier": "^3.3.2"
+  }
+}
