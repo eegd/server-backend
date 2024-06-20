@@ -1,11 +1,19 @@
-import express from "express";
+import express, { NextFunction, Request, Response } from "express"
+import bodyParser from "body-parser"
+import Config from "./common/Config"
 
-const app = express();
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config()
+}
 
-app.use((req, res) => {
-  res.sendStatus(200);
-});
+const app = express()
 
-app.listen(3000, () => {
-  console.log("server is running in port 3000");
-});
+app.use(bodyParser.json())
+
+app.use(function (err: any, req: Request, res: Response, next: NextFunction) {
+  console.log("Error: " + err)
+})
+
+app.listen(Config.port, () => {
+  console.log(`Express server backend started: http://localhost:${Config.port} (${Config.currentEnv})`)
+})
