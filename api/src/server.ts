@@ -23,7 +23,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(function urlLog(req: Request, res: Response, next: NextFunction) {
-  logger.trace(`API Req: ${req.originalUrl}, API Host: ${JSON.stringify(req.hostname)}`)
+  logger.debug(`API Req: ${req.originalUrl}, API Host: ${JSON.stringify(req.hostname)}`)
   next()
 })
 
