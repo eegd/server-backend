@@ -7,7 +7,7 @@ log4js.configure({
       type: "stdout",
       layout: {
         type: "pattern",
-        pattern: "[%d{yyyy-MM-dd hh:mm:ss}] [%f:%l:%o, %X{func}] %m",
+        pattern: "[%p] [%d{yyyy-MM-dd hh:mm:ss}] [%f:%l] %m",
       },
     },
   },

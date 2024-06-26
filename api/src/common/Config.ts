@@ -6,4 +6,12 @@ export default class Config {
   static get CORSUrl(): string {
     return process.env.CORS_URL || ""
   }
+
+  static get internalApiUrl() {
+    return (process.env.CONTROLLER_URL ?? "localhost:3000") + "/internal"
+  }
+
+  static get internalDbUrl() {
+    return Config.internalApiUrl + "/db"
+  }
 }

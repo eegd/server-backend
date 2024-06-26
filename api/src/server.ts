@@ -3,6 +3,7 @@ import cors from "cors"
 import express, { NextFunction, Request, Response } from "express"
 import Config from "./common/Config"
 import { logger } from "./common/Logger"
+import userRouter from "./userRouter"
 
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config()
@@ -27,6 +28,7 @@ app.use(function urlLog(req: Request, res: Response, next: NextFunction) {
   next()
 })
 
+app.use("/internal/db/user", userRouter)
 app.get("/health", (req: Request, res: Response) => {
   res.status(200).send("OK")
 })

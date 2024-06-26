@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "tsc --build",
-    "format": "prettier --write ./src/**/*.ts ./src/*.ts",
+    "format": "prettier --write ./src/*",
     "start-dev": "ts-node-dev --respawn ./src/server.ts",
     "start-prod": "node ./dist/server.js",
     "tslint": "tslint --project . src/**/*.ts src/*.ts"
@@ -13,10 +13,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/mongoose": "^5.11.97",
+    "@types/mysql": "^2.15.26",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "log4js": "^6.9.1",
+    "mongoose": "^8.4.3",
+    "mysql": "^2.18.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
   },
