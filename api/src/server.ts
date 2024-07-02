@@ -28,7 +28,7 @@ app.use(function urlLog(req: Request, res: Response, next: NextFunction) {
   next()
 })
 
-app.use("/internal/db/user", userRouter)
+app.use("/api/db/user", userRouter)
 app.get("/health", (req: Request, res: Response) => {
   res.status(200).send("OK")
 })
